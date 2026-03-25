@@ -8,6 +8,7 @@ import Collections from "./pages/Collections.tsx";
 import Occasions from "./pages/Occasions.tsx";
 import Contact from "./pages/Contact.tsx";
 import Cart from "./pages/Cart.tsx";
+import ProductDetail from "./pages/ProductDetail.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
