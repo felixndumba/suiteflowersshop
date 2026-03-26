@@ -8,11 +8,13 @@ import { Label } from "@/components/ui/label";
 import { ShoppingBag, MessageCircle, Check, ChevronLeft } from "lucide-react";
 import { useState } from "react";
 import { getGift, getGiftsByCategory, gifts } from "@/data/gifts";
+import { useCart } from "@/context/CartContext";
 
 const GiftDetail = () => {
   const { id } = useParams<{ id: string }>();
   const gift = getGift(id || "");
   const [selectedSize, setSelectedSize] = useState(0);
+  const { addToCart } = useCart();
 
   if (!gift) {
     return (
@@ -38,10 +40,23 @@ const GiftDetail = () => {
   }
 
   const currentPrice = gift.sizes[selectedSize].price;
+  const currentPriceNum = parseInt(currentPrice.replace("$", ""));
+
   const whatsappMessage = encodeURIComponent(
     `Hi! I'd like to order the "${gift.name}" (${gift.sizes[selectedSize].label} – ${currentPrice}). Please let me know the next steps!`
   );
   const whatsappUrl = `https://wa.me/?text=${whatsappMessage}`;
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: gift.id,
+      name: gift.name,
+      price: currentPriceNum,
+      priceLabel: currentPrice,
+      size: gift.sizes[selectedSize].label,
+      image: gift.image,
+    });
+  };
 
   return (
     <div className="min-h-screen">
@@ -97,7 +112,7 @@ const GiftDetail = () => {
                 </RadioGroup>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <Button className="flex-1 rounded-none h-12 tracking-wider uppercase text-xs font-body">
+                <Button onClick={handleAddToCart} className="flex-1 rounded-none h-12 tracking-wider uppercase text-xs font-body">
                   <ShoppingBag className="mr-2 h-4 w-4" /> Add to Cart
                 </Button>
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
