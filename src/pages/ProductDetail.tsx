@@ -93,7 +93,7 @@ const ProductDetail = () => {
                 ))}
               </ul>
               <div className="space-y-3">
-                <p className="text-sm font-body tracking-[0.2em] uppercase text-foreground">Select Size</p>
+                <p className="text-sm font-body tracking-[0.2em] uppercase text-foreground">Select No. of stems</p>
                 <RadioGroup value={String(selectedSize)} onValueChange={(v) => setSelectedSize(Number(v))} className="flex flex-wrap gap-3">
                   {product.sizes.map((size, i) => (
                     <div key={size.label}>

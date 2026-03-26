@@ -21,20 +21,19 @@ export const products: Product[] = [
   {
     id: "bridal-bliss",
     name: "Bridal Bliss",
-    price: "$120",
+    price: "KES 120",
     priceNum: 120,
     image: productBridal,
-    tag: "Wedding",
-    description:
-      "A breathtaking bridal arrangement featuring cascading white roses, delicate peonies, and lush greenery. Perfect for your most special day, this bouquet embodies timeless elegance and romance.",
-    details: [
-      "Hand-tied by our master florists",
-      "Premium white roses & peonies",
-      "Includes satin ribbon wrap",
-      "Lasts 7–10 days with care",
-    ],
+    tag: "Money Bouquet",
+description:
+  "A creative and luxurious bouquet crafted with care, beautifully arranged to make a bold and unforgettable gift. Perfect for birthdays, graduations, and special celebrations.",
+details: [
+  "Customizable amount and denominations",
+  "Elegant wrapping with premium ribbons",
+  "Perfect for gifting on special occasions",
+],
     sizes: [
-      { label: "Standard", price: "$120" },
+      { label: "", price: "$120" },
       { label: "Deluxe", price: "$180" },
       { label: "Grand", price: "$250" },
     ],
@@ -45,15 +44,15 @@ export const products: Product[] = [
     price: "$65",
     priceNum: 65,
     image: productSpring,
-    tag: "Seasonal",
-    description:
-      "Celebrate the season with a vibrant mix of tulips, daffodils, and ranunculus in soft pastels. This cheerful arrangement brings the freshness of spring indoors.",
-    details: [
-      "Seasonal tulips & daffodils",
-      "Arranged in a glass vase",
-      "Includes flower food sachet",
-      "Lasts 5–7 days with care",
-    ],
+    tag: "Flower Bouquet",
+description:
+  "A fresh and vibrant bouquet featuring a harmonious blend of seasonal blooms in soft, elegant tones. Perfect for brightening any space or celebrating life’s special moments with natural beauty and charm.",
+details: [
+  "Carefully selected seasonal flowers",
+  "Expertly hand-arranged by florists",
+  "Wrapped in elegant premium packaging",
+  "Lasts 5–7 days with proper care",
+],
     sizes: [
       { label: "Standard", price: "$65" },
       { label: "Deluxe", price: "$95" },
@@ -87,15 +86,14 @@ export const products: Product[] = [
     price: "$75",
     priceNum: 75,
     image: productDried,
-    tag: "Dried",
-    description:
-      "A stunning arrangement of preserved flowers and dried botanicals in warm earth tones. This long-lasting piece adds a bohemian charm to any space.",
-    details: [
-      "Preserved & dried botanicals",
-      "Warm earthy colour palette",
-      "Lasts months without water",
-      "Eco-friendly & sustainable",
-    ],
+    tag: "Kids Bouquet",
+description:
+  "A fun and cheerful bouquet designed especially for kids, featuring bright colorful blooms and playful accents that bring joy and excitement to any occasion. Perfect for birthdays, celebrations, or a sweet surprise.",
+details: [
+    "Playful wrapping with fun accents",
+  "Fitted with accompanyingments like snacks ",
+  "Perfect for birthdays and special treats",
+],
     sizes: [
       { label: "Standard", price: "$75" },
       { label: "Deluxe", price: "$110" },
@@ -108,15 +106,15 @@ export const products: Product[] = [
     price: "$95",
     priceNum: 95,
     image: productSympathy,
-    tag: "Sympathy",
-    description:
-      "A serene arrangement of white lilies, soft chrysanthemums, and greenery offering comfort during difficult times. A gentle expression of care and remembrance.",
-    details: [
-      "White lilies & chrysanthemums",
-      "Calming green foliage",
-      "Includes a sympathy card",
-      "Same-day delivery available",
-    ],
+    tag: "Lilies",
+description:
+  "A graceful and serene arrangement of fresh white lilies complemented by soft chrysanthemums and lush greenery. Thoughtfully designed to offer comfort, peace, and heartfelt sympathy during difficult times.",
+details: [
+  "Fresh white lilies & chrysanthemums",
+  "Elegant calming green foliage",
+  "Expertly arranged with care",
+  "Same-day delivery available",
+],
     sizes: [
       { label: "Standard", price: "$95" },
       { label: "Deluxe", price: "$140" },

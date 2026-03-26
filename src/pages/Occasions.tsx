@@ -6,15 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Heart, Gift, Star, Flower2, PartyPopper, HeartHandshake, ShoppingBag, ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { products } from "@/data/products";
-import { gifts } from "@/data/gifts";
 
 const occasions = [
-  { name: "Birthdays", description: "Brighten their day with vibrant, joyful arrangements", icon: Gift, color: "text-primary", tags: ["Seasonal"], giftCats: ["birthday"] },
-  { name: "Anniversaries", description: "Celebrate enduring love with timeless romantic blooms", icon: Heart, color: "text-primary", tags: ["Best Seller"], giftCats: ["romance"] },
-  { name: "Weddings", description: "From bouquets to centerpieces — make every moment magical", icon: Star, color: "text-primary", tags: ["Wedding"], giftCats: [] },
-  { name: "Sympathy", description: "Express your heartfelt condolences with graceful florals", icon: Flower2, color: "text-primary", tags: ["Sympathy"], giftCats: [] },
-  { name: "Celebrations", description: "Congratulations, promotions, or just because — flowers say it all", icon: PartyPopper, color: "text-primary", tags: ["Exotic"], giftCats: ["celebration"] },
-  { name: "Thank You", description: "Show gratitude with a beautifully crafted arrangement", icon: HeartHandshake, color: "text-accent", tags: ["Dried"], giftCats: ["gift-sets"] },
+  { name: "Birthdays", description: "Brighten their day with vibrant, joyful arrangements", icon: Gift, color: "text-primary", tags: ["Birthday"] },
+  { name: "Anniversaries", description: "Celebrate enduring love with timeless romantic blooms", icon: Heart, color: "text-primary", tags: ["Anniversary"] },
+  { name: "Romantic Gestures", description: "Express your love with passionate, heartfelt bouquets", icon: HeartHandshake, color: "text-accent", tags: ["Romance"] },
+  { name: "Celebrations", description: "Congratulations, promotions, or just because — flowers say it all", icon: PartyPopper, color: "text-primary", tags: ["Celebrations"] },
+  { name: "Thank You", description: "Show gratitude with a beautifully crafted arrangement", icon: HeartHandshake, color: "text-accent", tags: ["Dried"] },
 ];
 
 const Occasions = () => {
@@ -23,10 +21,7 @@ const Occasions = () => {
   const selectedOccasion = occasions.find((o) => o.name === selected);
 
   const occasionProducts = selectedOccasion
-    ? [
-        ...products.filter((p) => selectedOccasion.tags.includes(p.tag)),
-        ...gifts.filter((g) => selectedOccasion.giftCats.includes(g.category)),
-      ]
+    ? products.filter((p) => selectedOccasion.tags.includes(p.tag))
     : [];
 
   return (
@@ -87,34 +82,29 @@ const Occasions = () => {
                 <p className="text-center text-muted-foreground font-body py-12">No products found for this occasion yet.</p>
               ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {occasionProducts.map((item) => {
-                    const isGift = "category" in item;
-                    const link = isGift ? `/gift/${item.id}` : `/product/${item.id}`;
-                    const tag = isGift ? (item as any).category.replace("-", " ") : (item as any).tag;
-                    return (
-                      <Link key={item.id} to={link}>
-                        <Card className="group border-0 shadow-none bg-transparent overflow-hidden cursor-pointer">
-                          <div className="relative overflow-hidden aspect-[3/4]">
-                            <img src={item.image} alt={item.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                            <div className="absolute top-4 left-4">
-                              <span className="bg-background/90 backdrop-blur-sm text-foreground text-[10px] font-body tracking-[0.2em] uppercase px-3 py-1.5">{tag}</span>
-                            </div>
-                            <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-500 flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100">
-                              <Button size="sm" className="rounded-none tracking-wider uppercase text-[10px] font-body px-6">
-                                <ShoppingBag className="mr-2 h-3.5 w-3.5" /> View Details
-                              </Button>
-                            </div>
+                {occasionProducts.map((item) => (
+                    <Link key={item.id} to={`/product/${item.id}`}>
+                      <Card className="group border-0 shadow-none bg-transparent overflow-hidden cursor-pointer">
+                        <div className="relative overflow-hidden aspect-[3/4]">
+                          <img src={item.image} alt={item.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                          <div className="absolute top-4 left-4">
+                            <span className="bg-background/90 backdrop-blur-sm text-foreground text-[10px] font-body tracking-[0.2em] uppercase px-3 py-1.5">{item.tag}</span>
                           </div>
-                          <CardContent className="px-0 pt-5 pb-0">
-                            <div className="flex items-center justify-between">
-                              <h3 className="font-display text-lg text-foreground">{item.name}</h3>
-                              <span className="font-body text-sm text-muted-foreground tracking-wide">{item.price}</span>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      </Link>
-                    );
-                  })}
+                          <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-500 flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100">
+                            <Button size="sm" className="rounded-none tracking-wider uppercase text-[10px] font-body px-6">
+                              <ShoppingBag className="mr-2 h-3.5 w-3.5" /> View Details
+                            </Button>
+                          </div>
+                        </div>
+                        <CardContent className="px-0 pt-5 pb-0">
+                          <div className="flex items-center justify-between">
+                            <h3 className="font-display text-lg text-foreground">{item.name}</h3>
+                            <span className="font-body text-sm text-muted-foreground tracking-wide">{item.price}</span>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>

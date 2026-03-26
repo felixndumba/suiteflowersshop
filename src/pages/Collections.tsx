@@ -18,9 +18,9 @@ const collections = [
     image: productBridal,
   },
   {
-    slug: "seasonal-favorites",
-    name: "Seasonal Favorites",
-    description: "Fresh picks that celebrate each season's beauty",
+    slug:"Events-Subscriptons",
+    name: "Events & Subscriptions",
+    description: "Tailored floral solutions for events, bulk supply, and flexible subscription packages.",
     image: productSpring,
   },
 ];
@@ -28,9 +28,9 @@ const collections = [
 const tags = [...new Set(products.map((p) => p.tag))];
 
 const priceRanges = [
-  { label: "Under $80", min: 0, max: 79 },
-  { label: "$80 – $120", min: 80, max: 120 },
-  { label: "Over $120", min: 121, max: Infinity },
+  { label: "Under KES 1000", min: 0, max: 999 },
+  { label: "KES 1000 – KES 5000", min: 1000, max: 4999 },
+  { label: "Over KES 5000", min: 5000, max: Infinity },
 ];
 
 const Collections = () => {

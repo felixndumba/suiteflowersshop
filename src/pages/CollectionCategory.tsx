@@ -12,9 +12,9 @@ const collectionMap: Record<string, { name: string; description: string; product
     description: "Elegant arrangements for your most special day",
     productIds: ["bridal-bliss", "crimson-romance", "peaceful-grace"],
   },
-  "seasonal-favorites": {
-    name: "Seasonal Favorites",
-    description: "Fresh picks that celebrate each season's beauty",
+  "Events-Subscriptons": {
+    name: "Events & Subscriptions",
+    description: "Tailored floral solutions for events, bulk supply, and flexible subscription packages.",
     productIds: ["spring-awakening", "tropical-paradise", "desert-bloom"],
   },
 };
