@@ -1,11 +1,14 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { Search, SlidersHorizontal, X, ShoppingBag, ArrowRight } from "lucide-react";
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext } from "@/components/ui/pagination";
+
 import { Link } from "react-router-dom";
+import { Search, SlidersHorizontal, X, ShoppingBag, ArrowRight } from "lucide-react";
+
 import { products } from "@/data/products";
 import productBridal from "@/assets/product-bridal.jpg";
 import productSpring from "@/assets/product-spring.jpg";
@@ -38,6 +41,8 @@ const Collections = () => {
   const [tagFilter, setTagFilter] = useState<string | null>(null);
   const [priceFilter, setPriceFilter] = useState<number | null>(null);
   const [showFilters, setShowFilters] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 9;
 
   const filtered = useMemo(() => {
     let items = products;
@@ -53,7 +58,14 @@ const Collections = () => {
     return items;
   }, [search, tagFilter, priceFilter]);
 
+  const totalPages = Math.ceil(filtered.length / pageSize);
+  const currentItems = filtered.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+
   const hasFilters = search || tagFilter || priceFilter !== null;
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filtered.length]);
 
   const clearFilters = () => {
     setSearch("");
@@ -159,43 +171,82 @@ const Collections = () => {
         <section className="py-16 lg:py-20 bg-secondary/30">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <p className="text-sm font-body text-muted-foreground mb-8">
-              {filtered.length} {filtered.length === 1 ? "product" : "products"} found
+              {filtered.length} {filtered.length === 1 ? "product" : "products"} found • Page {currentPage} of {totalPages}
             </p>
-            {filtered.length === 0 ? (
-              <div className="text-center py-20 space-y-4">
-                <p className="font-display text-2xl text-foreground">No products found</p>
-                <p className="text-muted-foreground font-body">Try adjusting your filters or search.</p>
-                <Button variant="outline" className="rounded-none font-body" onClick={clearFilters}>Clear Filters</Button>
+{filtered.length === 0 ? (
+  <div className="text-center py-20 space-y-4">
+    <p className="font-display text-2xl text-foreground">No products found</p>
+    <p className="text-muted-foreground font-body">Try adjusting your filters or search.</p>
+    <Button variant="outline" className="rounded-none font-body" onClick={clearFilters}>Clear Filters</Button>
+  </div>
+) : (
+  <>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {currentItems.map((product) => (
+        <Link key={product.id} to={`/product/${product.id}`}>
+          <Card className="group border-0 shadow-none bg-transparent overflow-hidden cursor-pointer">
+            <div className="relative overflow-hidden aspect-[3/4]">
+              <img src={product.image} alt={product.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute top-4 left-4">
+                <span className="bg-background/90 backdrop-blur-sm text-foreground text-[10px] font-body tracking-[0.2em] uppercase px-3 py-1.5">{product.tag}</span>
               </div>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filtered.map((product) => (
-                  <Link key={product.id} to={`/product/${product.id}`}>
-                    <Card className="group border-0 shadow-none bg-transparent overflow-hidden cursor-pointer">
-                      <div className="relative overflow-hidden aspect-[3/4]">
-                        <img src={product.image} alt={product.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                        <div className="absolute top-4 left-4">
-                          <span className="bg-background/90 backdrop-blur-sm text-foreground text-[10px] font-body tracking-[0.2em] uppercase px-3 py-1.5">{product.tag}</span>
-                        </div>
-                        <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-500 flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100">
-                          <Button size="sm" className="rounded-none tracking-wider uppercase text-[10px] font-body px-6">
-                            <ShoppingBag className="mr-2 h-3.5 w-3.5" /> View Details
-                          </Button>
-                        </div>
-                      </div>
-                      <CardContent className="px-0 pt-5 pb-0">
-                        <div className="flex items-center justify-between">
-                          <h3 className="font-display text-lg text-foreground">{product.name}</h3>
-                          <span className="font-body text-sm text-muted-foreground tracking-wide">{product.price}</span>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                ))}
+              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-500 flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100">
+                <Button size="sm" className="rounded-none tracking-wider uppercase text-[10px] font-body px-6">
+                  <ShoppingBag className="mr-2 h-3.5 w-3.5" /> View Details
+                </Button>
               </div>
-            )}
+            </div>
+            <CardContent className="px-0 pt-5 pb-0">
+              <div className="flex items-center justify-between">
+                <h3 className="font-display text-lg text-foreground">{product.name}</h3>
+                <span className="font-body text-sm text-muted-foreground tracking-wide">{product.price}</span>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+      ))}
+    </div>
+
+    {totalPages > 1 && (
+      <div className="flex justify-center mt-12">
+        <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious 
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setCurrentPage((prev) => Math.max(1, prev - 1));
+                }} 
+                className="rounded-none font-body tracking-wider uppercase text-xs"
+              />
+            </PaginationItem>
+            <PaginationItem>
+              <span className="flex h-9 w-9 items-center justify-center text-sm font-medium">
+                {currentPage}
+              </span>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationNext 
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setCurrentPage((prev) => Math.min(totalPages, prev + 1));
+                }} 
+                className="rounded-none font-body tracking-wider uppercase text-xs"
+              />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </div>
+    )}
+  </>
+)}
           </div>
         </section>
+
+
+
       </main>
       <Footer />
     </div>

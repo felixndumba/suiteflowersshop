@@ -21,7 +21,7 @@ const FeaturedProducts = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
+          {products.slice(0, 6).map((product) => (
             <Link key={product.id} to={`/product/${product.id}`}>
               <Card className="group border-0 shadow-none bg-transparent overflow-hidden cursor-pointer">
                 <div className="relative overflow-hidden aspect-[3/4]">

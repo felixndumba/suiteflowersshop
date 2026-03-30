@@ -37,10 +37,10 @@ const ProductDetail = () => {
   const currentPrice = product.sizes[selectedSize].price;
   const currentPriceNum = parseInt(currentPrice.replace("$", ""));
 
-  const whatsappMessage = encodeURIComponent(
+const whatsappMessage = encodeURIComponent(
     `Hi! I'd like to order the "${product.name}" (${product.sizes[selectedSize].label} – ${currentPrice}). Please let me know the next steps!`
   );
-  const whatsappUrl = `https://wa.me/?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/254797624963?text=${whatsappMessage}`;
 
   const handleAddToCart = () => {
     addToCart({

@@ -1,21 +1,21 @@
 const testimonials = [
-  {
-    quote: "The most stunning arrangement I've ever received. Every petal was perfection.",
-    author: "Sarah M.",
-    role: "Loyal Customer",
+  
+   {
+    quote: "Good service and fair prices. I’ve ordered twice now and both times were smooth.",
+    author: "Daniel K.",
+    role: "Customer",
   },
   {
-    quote: "Pétale made my wedding day absolutely magical. The florals were beyond my dreams.",
-    author: "Jessica & Tom",
-    role: "Wedding Clients",
+    quote: "Bought one for a friend’s graduation. It looked neat and well put together.",
+    author: "Faith A.",
+    role: "Customer",
   },
   {
-    quote: "Their subscription service brings joy to my home every single week. Simply beautiful.",
-    author: "Claire D.",
-    role: "Weekly Subscriber",
+    quote: "They helped me pick something simple and it came out perfect. No complaints.",
+    author: "James M.",
+    role: "Customer",
   },
 ];
-
 const Testimonials = () => {
   return (
     <section className="py-24 lg:py-32 bg-secondary">

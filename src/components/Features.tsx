@@ -1,3 +1,4 @@
+import { Description } from "@radix-ui/react-toast";
 import { Truck, Leaf, Heart, Clock } from "lucide-react";
 
 const features = [
@@ -8,8 +9,8 @@ const features = [
   },
   {
     icon: Leaf,
-    title: "Sustainably Sourced",
-    description: "Partnering with local farms that practice eco-friendly growing.",
+    title: "Sourcing Flowers",
+    description: "Partnering with local farms that practice eco-friendly growing to supply fresh cut flowers to our esteemed clients.",
   },
   {
     icon: Heart,
@@ -17,9 +18,10 @@ const features = [
     description: "Each arrangement is uniquely designed by our artisan florists.",
   },
   {
-    icon: Clock,
-    title: "Freshness Guaranteed",
-    description: "Our blooms last 7+ days or we'll replace them—no questions asked.",
+      icon: Clock,
+      title: "Freshness Guaranteed",
+      description: "We guarantee the freshness of our flowers."
+   
   },
 ];
 

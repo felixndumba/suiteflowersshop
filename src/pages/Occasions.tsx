@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { products } from "@/data/products";
 
 const occasions = [
-  { name: "Birthdays", description: "Brighten their day with vibrant, joyful arrangements", icon: Gift, color: "text-primary", tags: ["Birthday"] },
+  { name: "Birthdays", description: "Brighten their day with vibrant, joyful arrangements", icon: Gift, color: "text-primary", tags: ["Birthday Special"] },
   { name: "Anniversaries", description: "Celebrate enduring love with timeless romantic blooms", icon: Heart, color: "text-primary", tags: ["Anniversary"] },
   { name: "Romantic Gestures", description: "Express your love with passionate, heartfelt bouquets", icon: HeartHandshake, color: "text-accent", tags: ["Romance"] },
   { name: "Celebrations", description: "Congratulations, promotions, or just because — flowers say it all", icon: PartyPopper, color: "text-primary", tags: ["Celebrations"] },

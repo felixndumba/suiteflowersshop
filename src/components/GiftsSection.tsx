@@ -4,7 +4,7 @@ import { Gift, Heart, Cake, Baby, GraduationCap, PartyPopper } from "lucide-reac
 const giftCategories = [
   { name: "Romance", icon: Heart, description: "For your special someone", href: "/gifts?category=romance" },
   { name: "Birthday", icon: Cake, description: "Make their day unforgettable", href: "/gifts?category=birthday" },
-  { name: "New Baby", icon: Baby, description: "Welcome the little one", href: "/gifts?category=new-baby" },
+  //{ name: "New Baby", icon: Baby, description: "Welcome the little one", href: "/gifts?category=new-baby" },
   { name: "Graduation", icon: GraduationCap, description: "Celebrate their achievement", href: "/gifts?category=graduation" },
   { name: "Celebration", icon: PartyPopper, description: "For every joyful moment", href: "/gifts?category=celebration" },
   { name: "Gift Sets", icon: Gift, description: "Curated bundles of joy", href: "/gifts?category=gift-sets" },

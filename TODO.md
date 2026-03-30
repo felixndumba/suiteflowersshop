@@ -1,9 +1,9 @@
-# Task: Change occasions to use tags from products not gifts (REVISION: dummy tags)
+# Task: Limit products on main page FeaturedProducts to a few
 
 ## Steps:
-1. [x] Initial plan & Occasions.tsx pure products (gifts removed)
-2. [x] Per feedback: Added dummy occasion tags to products.ts (Bridal→Wedding, Spring→Seasonal, Dried→Dried, Sympathy→Sympathy; kept Best Seller/Exotic)
-3. [x] Reverted Occasions.tsx tags to original (Seasonal, Best Seller, Wedding, Sympathy, Exotic, Dried) for exact matches
-4. [x] Verified: Each occasion now shows its dedicated product via tag matching, pure products only, TS clean
+1. [x] Create TODO.md
+2. [x] Edit src/components/FeaturedProducts.tsx to slice products to first 6
+3. [x] Verify change displays only 6 products on main page
+4. [x] Refresh dev server and test
+5. [x] Mark complete and attempt_completion
 
-Task completed successfully. View at /occasions.

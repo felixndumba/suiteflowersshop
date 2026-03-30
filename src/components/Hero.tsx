@@ -35,14 +35,7 @@ const Hero = () => {
             <Button size="lg" className="rounded-none px-8 tracking-wider uppercase text-xs font-body h-12">
               Shop Collection <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="rounded-none px-8 tracking-wider uppercase text-xs font-body h-12 border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-            >
-              Our Story
-            </Button>
-          </div>
+                     </div>
         </div>
       </div>
     </section>

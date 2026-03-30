@@ -2,14 +2,28 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
+import { Minus, Plus, Trash2, ShoppingBag, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCart } from "@/context/CartContext";
+import { useState } from "react";
 
 const Cart = () => {
   const { items, updateQty, remove, total } = useCart();
   const shipping = items.length > 0 ? 15 : 0;
   const grandTotal = total + shipping;
+  const [customerName, setCustomerName] = useState("");
+
+  const handleWhatsAppOrder = () => {
+    const orderSummary = items
+      .map((item) => `${item.name} (${item.size}) x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`)
+      .join("\n");
+    const message = `Hi! I'd like to place an order:\n\n${orderSummary}\n\nSubtotal: $${total.toFixed(2)}\nShipping: $${shipping.toFixed(2)}\nTotal: $${grandTotal.toFixed(2)}\n\nCustomer: ${customerName || "Not provided"}\n\nThank you!`;
+    
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/254797624963?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <div className="min-h-screen">
@@ -68,20 +82,35 @@ const Cart = () => {
                   <div className="space-y-3 font-body text-sm">
                     <div className="flex justify-between text-muted-foreground">
                       <span>Subtotal</span>
-                      <span>${total}</span>
+                      <span>${total.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between text-muted-foreground">
                       <span>Shipping</span>
-                      <span>${shipping}</span>
+                      <span>${shipping.toFixed(2)}</span>
                     </div>
                     <Separator />
                     <div className="flex justify-between text-foreground font-semibold text-base">
                       <span>Total</span>
-                      <span>${grandTotal}</span>
+                      <span>${grandTotal.toFixed(2)}</span>
                     </div>
                   </div>
-                  <Button size="lg" className="rounded-none w-full tracking-wider uppercase text-xs font-body h-12">
-                    Checkout
+                  <div className="space-y-3">
+                    <label className="text-sm font-medium text-foreground block mb-2">Your Name (optional)</label>
+                    <input
+                      type="text"
+                      value={customerName}
+                      onChange={(e) => setCustomerName(e.target.value)}
+                      placeholder="Enter your name"
+                      className="w-full px-4 py-2 border border-border rounded-md bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    />
+                  </div>
+                  <Button 
+                    size="lg" 
+                    className="rounded-none w-full tracking-wider uppercase text-xs font-body h-12 flex items-center gap-2 bg-green-600 hover:bg-green-700"
+                    onClick={handleWhatsAppOrder}
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    Order via WhatsApp
                   </Button>
                   <Link to="/collections" className="block text-center">
                     <span className="text-xs font-body tracking-wider uppercase text-muted-foreground hover:text-foreground transition-colors">
