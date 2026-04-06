@@ -1,9 +1,1 @@
-# Task: Limit products on main page FeaturedProducts to a few
-
-## Steps:
-1. [x] Create TODO.md
-2. [x] Edit src/components/FeaturedProducts.tsx to slice products to first 6
-3. [x] Verify change displays only 6 products on main page
-4. [x] Refresh dev server and test
-5. [x] Mark complete and attempt_completion
-
+# Task: Replace Pétale logo text with suite.png image in Navbar.tsx&#10;&#10;## Steps:&#10;1. [x] Create TODO.md and get user plan approval&#10;2. [ ] Edit src/components/Navbar.tsx to replace the Link text with img src="/src/assets/suite.png"&#10;3. [ ] Update TODO.md with completion&#10;4. [ ] Test and complete task&#10;

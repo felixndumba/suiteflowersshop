@@ -11,21 +11,23 @@ import { Search, SlidersHorizontal, X, ShoppingBag, ArrowRight } from "lucide-re
 
 import { products } from "@/data/products";
 import productBridal from "@/assets/product-bridal.jpg";
-import productSpring from "@/assets/product-spring.jpg";
+import productSympathy from "@/assets/product-sympathy.jpg";
+
 
 const collections = [
   {
     slug: "wedding-bridal",
     name: "Wedding & Bridal",
-    description: "Elegant arrangements for your most special day",
+    description: "Elegant arrangements for your most special day.Place your order via email or phone call.page NOT available yet.",
     image: productBridal,
   },
   {
-    slug:"Events-Subscriptons",
+    slug: "events-subscriptions",
     name: "Events & Subscriptions",
-    description: "Tailored floral solutions for events, bulk supply, and flexible subscription packages.",
-    image: productSpring,
+    description: "Tailored floral solutions for events, bulk supply, and flexible subscription packages,place your order via email or phone call.page NOT available yet.",
+    image: productSympathy,
   },
+
 ];
 
 const tags = [...new Set(products.map((p) => p.tag))];

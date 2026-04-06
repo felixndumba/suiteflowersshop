@@ -6,16 +6,16 @@ import { Button } from "@/components/ui/button";
 import { ShoppingBag, ChevronLeft } from "lucide-react";
 import { products } from "@/data/products";
 
-const collectionMap: Record<string, { name: string; description: string; productIds: string[] }> = {
+const collectionMap: Record<string, { name: string; description: string; tags: string[] }> = {
   "wedding-bridal": {
     name: "Wedding & Bridal",
     description: "Elegant arrangements for your most special day",
-    productIds: ["bridal-bliss", "crimson-romance", "peaceful-grace"],
+    tags: ["Wedding", "Money Bouquet"],
   },
-  "Events-Subscriptons": {
+  "events-subscriptions": {
     name: "Events & Subscriptions",
     description: "Tailored floral solutions for events, bulk supply, and flexible subscription packages.",
-    productIds: ["spring-awakening", "tropical-paradise", "desert-bloom"],
+    tags: ["Celebration", "Luxury"],
   },
 };
 
@@ -40,7 +40,7 @@ const CollectionCategory = () => {
     );
   }
 
-  const items = products.filter((p) => collection.productIds.includes(p.id));
+  const items = products.filter((p) => collection.tags.some((tag) => p.tag === tag));
 
   return (
     <div className="min-h-screen">

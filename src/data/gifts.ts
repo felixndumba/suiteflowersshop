@@ -1,16 +1,16 @@
 import productBridal from "@/assets/product-bridal.jpg";
-import productSpring from "@/assets/product-spring.jpg";
+
 import productRomance from "@/assets/product-romance.jpg";
-import productDried from "@/assets/product-dried.jpg";
+
 import productSympathy from "@/assets/product-sympathy.jpg";
-import productTropical from "@/assets/product-tropical.jpg";
+
 
 import kidsBouquetI from "@/assets/Kids bouquet I.jpeg";
 import kidsBouquetII from "@/assets/Kids bouquet II.jpeg";
 import suiteBouquet from "@/assets/Suite bouquet.jpeg";
 import valBouquet from "@/assets/Val.jpeg";
 import valeriaBouquet from "@/assets/Valeria.jpeg";
-import wBouquet from "@/assets/W-bouquet .jpeg";
+
 
 export interface GiftItem {
   id: string;
@@ -55,7 +55,7 @@ export const gifts: GiftItem[] = [
     name: "Sweetheart Bouquet",
     price: "$75",
     priceNum: 75,
-    image: productBridal,
+    image:  productRomance,
     category: "romance",
     description: "Soft pink peonies and white roses create a tender, romantic arrangement.",
     details: ["Pink peonies & white roses", "Glass vase included", "Flower food sachet", "Lasts 7-10 days"],
@@ -70,7 +70,7 @@ export const gifts: GiftItem[] = [
     name: "Birthday Blooms",
     price: "$65",
     priceNum: 65,
-    image: productSpring,
+    image:  productRomance,
     category: "birthday",
     description: "A vibrant mix of colorful flowers to make any birthday celebration extra special.",
     details: ["Bright seasonal mix", "Festive wrapping", "Birthday card included", "Lasts 5-7 days"],
@@ -85,7 +85,7 @@ export const gifts: GiftItem[] = [
     name: "Confetti Garden",
     price: "$70",
     priceNum: 70,
-    image: productTropical,
+    image:  productRomance,
     category: "birthday",
     description: "A joyful explosion of colorful blooms in a decorative pot, perfect for birthdays.",
     details: ["Mixed tropical flowers", "Ceramic pot included", "Low maintenance", "Lasts 10-14 days"],
@@ -115,7 +115,7 @@ export const gifts: GiftItem[] = [
     name: "Bright Future",
     price: "$60",
     priceNum: 60,
-    image: productSpring,
+    image:  productRomance,
     category: "graduation",
     description: "Bold, bright flowers celebrating achievement and the exciting road ahead.",
     details: ["Sunflowers & bright mix", "Congratulations card", "Gift wrapped", "Lasts 5-7 days"],
@@ -130,7 +130,7 @@ export const gifts: GiftItem[] = [
     name: "Party Popper",
     price: "$78",
     priceNum: 78,
-    image: productTropical,
+    image:  productRomance,
     category: "celebration",
     description: "An exuberant arrangement of exotic flowers for any celebration worth remembering.",
     details: ["Exotic flower mix", "Statement arrangement", "Ceramic vase", "Lasts 10-14 days"],
@@ -160,7 +160,7 @@ export const gifts: GiftItem[] = [
     name: "Bloom Box",
     price: "$110",
     priceNum: 110,
-    image: productDried,
+    image:  productRomance,
     category: "gift-sets",
     description: "A curated gift box with dried flowers, scented candle, and artisan chocolates.",
     details: ["Dried flower arrangement", "Scented candle", "Artisan chocolates", "Luxury gift box"],
@@ -265,7 +265,7 @@ export const gifts: GiftItem[] = [
     name: "Wedding White Bouquet",
     price: "$108",
     priceNum: 108,
-    image: wBouquet,
+    image:valeriaBouquet,
     category: "wedding",
     description: "Classic all-white wedding bouquet for bridesmaids and ceremony.",
     details: ["Bridal white roses", "Wedding appropriate", "Silk ribbon", "Bridal party ready"],

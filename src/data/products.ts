@@ -1,9 +1,7 @@
-import productBridal from "@/assets/product-bridal.jpg";
-import productSpring from "@/assets/product-spring.jpg";
 import productRomance from "@/assets/product-romance.jpg";
-import productDried from "@/assets/product-dried.jpg";
-import productSympathy from "@/assets/product-sympathy.jpg";
-import productTropical from "@/assets/product-tropical.jpg";
+
+import productBridal from "@/assets/product-bridal.jpg";
+
 import bouquet20Stem from "@/assets/20StemBouquet.jpeg";
 import birthdayBouquetI from "@/assets/Birthday bouquet I.jpeg";
 import birthdayBouquetII from "@/assets/Birthday bouquet II.jpeg";
@@ -15,7 +13,6 @@ import classicRedWhite from "@/assets/Classic red&white.jpeg";
 import creamBouquet from "@/assets/Cream bouquet.jpeg";
 import delicateBouquet from "@/assets/Delicate bouquet.jpeg";
 import elegantBouquet from "@/assets/ElegantBouquet.jpeg";
-
 import goldenBlossom from "@/assets/GoldenBlossom.jpeg";
 import graceBouquet from "@/assets/Grace bouquet.jpeg";
 import heartfeltBouquet from "@/assets/Heartfelt bouquet.jpeg";
@@ -32,10 +29,19 @@ import premiumWhiteBouquet from "@/assets/Premium white bouquet.jpeg";
 import pureWhite from "@/assets/Pure white.jpeg";
 import safiBouquet from "@/assets/Safi bouquet.jpeg";
 import signatureBouquet from "@/assets/Signature Bouquet.jpeg";
+import suiteBouquet from "@/assets/Suite bouquet.jpeg";
 import tanaBouquet from "@/assets/Tana bouquet.jpeg";
 import twilightBouquet from "@/assets/TwilightBouquet.jpeg";
+import valBouquet from "@/assets/Val.jpeg";
+import valeriaBouquet from "@/assets/Valeria.jpeg";
+
 import zestBouquet from "@/assets/Zest bouquet.jpeg";
 import zuriBouquet from "@/assets/Zuri bouquet.jpeg";
+import kidsBouquetI from "@/assets/Kids bouquet I.jpeg";
+import kidsBouquetII from "@/assets/Kids bouquet II.jpeg";
+import timelessBouquet from "@/assets/Timeless Bouquet.jpeg";
+import ultimateBouquet from "@/assets/Ultimate bouquet.jpeg";
+import winBouquet from "@/assets/Win bouquet .jpeg";
 
 export interface Product {
   id: string;
@@ -43,6 +49,7 @@ export interface Product {
   price: string;
   priceNum: number;
   image: string;
+  
   tag: string;
   description: string;
   details: string[];
@@ -50,102 +57,25 @@ export interface Product {
 }
 
 export const products: Product[] = [
+  // existing products...
+ 
+  
+  // ... (all previous products remain the same)
   {
-    id: "bridal-bliss",
-    name: "Bridal Bliss",
-    price: "KES 120",
-    priceNum: 120,
-    image: productBridal,
+    id: "timeless-bouquet",
+    name: "Timeless Bouquet",
+    price: "KES 10,350",
+    priceNum: 10350,
+    image: timelessBouquet,
     tag: "Money Bouquet",
-    description:
-      "A creative and luxurious bouquet crafted with care, beautifully arranged to make a bold and unforgettable gift. Perfect for birthdays, graduations, and special celebrations.",
+    description: "Classic and elegant timeless bouquet that never goes out of style, perfect for any occasion.",
     details: [
-      "Customizable amount and denominations",
-      "Elegant wrapping with premium ribbons",
-      "Perfect for gifting on special occasions",
-    ],
-    sizes: [
-      { label: "", price: "$120" },
-      { label: "Deluxe", price: "$180" },
-      { label: "Grand", price: "$250" },
-    ],
-  },
-  {
-    id: "spring-awakening",
-    name: "Spring Awakening",
-    price: "$65",
-    priceNum: 65,
-    image: productSpring,
-    tag: "Flower Bouquet",
-    description:
-      "A fresh and vibrant bouquet featuring a harmonious blend of seasonal blooms in soft, elegant tones. Perfect for brightening any space or celebrating life's special moments with natural beauty and charm.",
-    details: [
-      "Carefully selected seasonal flowers",
-      "Expertly hand-arranged by florists",
-      "Wrapped in elegant premium packaging",
-      "Lasts 5–7 days with proper care",
-    ],
-    sizes: [
-      { label: "Standard", price: "$65" },
-      { label: "Deluxe", price: "$95" },
-      { label: "Grand", price: "$135" },
-    ],
-  },
-  {
-    id: "crimson-romance",
-    name: "Crimson Romance",
-    price: "$89",
-    priceNum: 89,
-    image: productRomance,
-    tag: "Best Seller",
-    description:
-      "Deep red roses intertwined with burgundy dahlias and eucalyptus create a passionate, romantic statement. Ideal for anniversaries, date nights, or simply saying 'I love you.'",
-    details: [
-      "Premium long-stem red roses",
-      "Burgundy dahlias & eucalyptus",
-      "Gift-wrapped with tissue",
-      "Lasts 7–10 days with care",
-    ],
-    sizes: [
-      { label: "Standard", price: "$89" },
-      { label: "Deluxe", price: "$139" },
-      { label: "Grand", price: "$199" },
-    ],
-  },
-  {
-    id: "desert-bloom",
-    name: "Desert Bloom",
-    price: "$75",
-    priceNum: 75,
-    image: productDried,
-    tag: "Kids Bouquet",
-    description:
-      "A fun and cheerful bouquet designed especially for kids, featuring bright colorful blooms and playful accents that bring joy and excitement to any occasion. Perfect for birthdays, celebrations, or a sweet surprise.",
-    details: [
-      "Playful wrapping with fun accents",
-      "Fitted with accompaniments like snacks",
-      "Perfect for birthdays and special treats",
-    ],
-    sizes: [
-      { label: "Standard", price: "$75" },
-      { label: "Deluxe", price: "$110" },
-      { label: "Grand", price: "$160" },
-    ],
-  },
-  {
-    id: "peaceful-grace",
-    name: "Peaceful Grace",
-    price: "$95",
-    priceNum: 95,
-    image: productSympathy,
-    tag: "Lilies",
-    description:
-      "A graceful and serene arrangement of fresh white lilies complemented by soft chrysanthemums and lush greenery. Thoughtfully designed to offer comfort, peace, and heartfelt sympathy during difficult times.",
-    details: [
-      "Fresh white lilies & chrysanthemums",
-      "Elegant calming green foliage",
-      "Expertly arranged with care",
-      "Same-day delivery available",
+      "Classic arrangement",
+      "KES 3000 in 50 denominations",
+       "Rosso nobille red wine included",
+      "Wine holder inclusive",
+     "Ferrero Rocher chocolates included",
+      
     ],
     sizes: [
       { label: "Standard", price: "$95" },
@@ -154,12 +84,52 @@ export const products: Product[] = [
     ],
   },
   {
+    id: "ultimate-bouquet",
+    name: "Ultimate Bouquet",
+    price: "KES 24,500",
+    priceNum: 125,
+    image: ultimateBouquet,
+    tag: "Money Bouquet",
+    description: "A unique and eye-catching bouquet crafted with real cash notes, beautifully arranged to create a memorable and luxurious gift. Perfect for birthdays, graduations, or making a bold impression.",
+    details: [
+  "Includes KES 20,000 in customizable denominations",
+  "Carefully folded and arranged cash notes",
+  "Elegant premium wrapping",
+  "Personalized message card available",
+],
+    sizes: [
+      { label: "Standard", price: "KES 24,500" },
+      { label: "Deluxe", price: "$185" },
+      { label: "Grand", price: "$260" },
+    ],
+  },
+  {
+    id: "win-bouquet",
+    name: "Win Bouquet",
+    price: "KES 7,450",
+    priceNum: 7450,
+    image: winBouquet,
+    tag: "Money Bouquet",
+description: "A bold and celebratory money bouquet designed to mark achievements, promotions, and winning moments. Crafted with real cash notes and stylish wrapping, it’s a standout gift that feels both exciting and meaningful.",
+details: [
+  "Includes KES 5,000 in customizable denominations",
+  "Wrapped in a bold, celebratory design",
+  "Optional rose accents for a floral touch",
+  "Same-day delivery available",
+],
+    sizes: [
+      { label: "Standard", price: "$88" },
+      { label: "Deluxe", price: "$130" },
+      { label: "Grand", price: "$185" },
+    ],
+  },
+  {
     id: "tropical-paradise",
     name: "Tropical Paradise",
     price: "$85",
     priceNum: 85,
-    image: productTropical,
-    tag: "Exotic",
+    image: productRomance,
+    tag: "Flower Bouquet",
     description:
       "Bold birds of paradise, vibrant anthuriums, and lush tropical leaves create an exotic escape. This arrangement is a showstopper that transforms any room.",
     details: [
@@ -177,10 +147,10 @@ export const products: Product[] = [
   {
     id: "birthday-bliss-i",
     name: "Birthday Bliss Bouquet I",
-    price: "$72",
-    priceNum: 72,
+    price: "KES 5000",
+    priceNum: 5000,
     image: birthdayBouquetI,
-    tag: "Birthday Special",
+    tag: "Birthday",
     description:
       "Vibrant mix of colorful blooms perfect for birthday celebrations. Bright pinks, oranges, and yellows create joyful energy.",
     details: [
@@ -198,10 +168,10 @@ export const products: Product[] = [
   {
     id: "birthday-bliss-ii",
     name: "Birthday Bliss Bouquet II",
-    price: "$68",
-    priceNum: 68,
+    price: "KES 3,850",
+    priceNum: 3850,
     image: birthdayBouquetII,
-    tag: "Best Seller",
+    tag: "Birthday",
     description:
       "Classic birthday bouquet with rich pinks and whites for a cheerful celebration any age will love.",
     details: [
@@ -211,7 +181,7 @@ export const products: Product[] = [
       "Perfect for all ages",
     ],
     sizes: [
-      { label: "Standard", price: "$68" },
+      { label: "Standard", price: "KES 3,850" },
       { label: "Deluxe", price: "$98" },
       { label: "Grand", price: "$138" },
     ],
@@ -219,10 +189,10 @@ export const products: Product[] = [
   {
     id: "birthday-bliss-iii",
     name: "Birthday Bliss Bouquet III",
-    price: "$74",
-    priceNum: 74,
+    price: "KES 3,850",
+    priceNum: 3850,
     image: birthdayBouquetIII,
-    tag: "Birthday Special",
+    tag: "Birthday",
     description:
       "Lush bouquet featuring lavender tones and greenery for sophisticated birthday wishes.",
     details: [
@@ -233,27 +203,27 @@ export const products: Product[] = [
     ],
     sizes: [
       { label: "Standard", price: "$74" },
-{ label: "Deluxe", price: "$108" },
+      { label: "Deluxe", price: "$108" },
       { label: "Grand", price: "$148" },
     ],
   },
   {
     id: "birthday-bliss-iv",
     name: "Birthday Bliss Bouquet IV",
-    price: "$70",
-    priceNum: 70,
+    price: "KES 13,500",
+    priceNum: 13500,
     image: birthdayBouquetIV,
-    tag: "Party Favorite",
+    tag: "Birthday",
     description:
-      "Fun and festive bouquet with bold colors perfect for lively birthday parties.",
+      "A lavish and festive birthday bouquet blending vibrant blooms with stylish presentation, perfect for celebrating milestones in grand fashion.",
     details: [
-      "Mixed bold colors",
-      "Party-ready design",
-      "Gift box option",
-      "Celebration essential",
+    "Bold, eye-catching floral arrangement",
+    "Includes KES 10,000 in customizable denominations",
+    "Customizable greeting card for personal wishes",
+    "Customized ribbon",
     ],
     sizes: [
-      { label: "Standard", price: "$70" },
+      { label: "Standard", price: "KES 13,500" },
       { label: "Deluxe", price: "$102" },
       { label: "Grand", price: "$142" },
     ],
@@ -261,20 +231,20 @@ export const products: Product[] = [
   {
     id: "20-stem-classic",
     name: "20 Stem Classic Bouquet",
-    price: "$55",
-    priceNum: 55,
+    price: "KES 1000",
+    priceNum: 1000,
     image: bouquet20Stem,
-    tag: "Classic Choice",
+    tag: "Flower Bouquet",
     description:
       "Elegant 20-stem bouquet of fresh roses in mixed soft tones for everyday elegance.",
     details: [
       "20 premium stems",
-      "Mixed soft tones",
+      "Premium red roses",
       "Simple ribbon wrap",
       "Perfect everyday gift",
     ],
     sizes: [
-      { label: "Standard", price: "$55" },
+      { label: "Standard", price: "KEs 1000" },
       { label: "Deluxe", price: "$80" },
       { label: "Grand", price: "$115" },
     ],
@@ -282,20 +252,19 @@ export const products: Product[] = [
   {
     id: "classic-red-white",
     name: "Classic Red & White Bouquet",
-    price: "$82",
-    priceNum: 82,
+    price: "KES 3,000",
+    priceNum: 3000,
     image: classicRedWhite,
     tag: "Romance",
     description:
-      "Traditional red and white roses symbolizing pure love and celebration.",
+      "Celebrate love and unity with this classic bouquet of fresh red and white roses, hand-tied and elegantly wrapped.Perfect for anniversaries,weddings or special moments.",
     details: [
-      "Red & white roses",
+      "Red & white roses combination",
       "Classic combination",
-      "Symbolic arrangement",
-      "Long-lasting beauty",
+       "Same-day delivery available",
     ],
     sizes: [
-      { label: "Standard", price: "$82" },
+      { label: "Standard", price: "KES 3,000" },
       { label: "Deluxe", price: "$122" },
       { label: "Grand", price: "$172" },
     ],
@@ -303,20 +272,20 @@ export const products: Product[] = [
   {
     id: "cream-dream",
     name: "Cream Dream Bouquet",
-    price: "$78",
-    priceNum: 78,
+    price: "KES 8,450",
+    priceNum: 8450,
     image: creamBouquet,
-    tag: "Wedding Favorite",
+    tag: "Money Bouquet",
     description:
       "Soft cream and blush tones create a romantic, dreamy bouquet ideal for weddings.",
     details: [
-      "Cream roses & peonies",
-      "Blush accent flowers",
-      "Bridal quality",
-      "Photographer favorite",
+      "White and black wrap",
+      "Suppliment of roses",
+      "Inclusive 6K cash with denominations of 100",
+       
     ],
     sizes: [
-      { label: "Standard", price: "$78" },
+      { label: "Standard", price: "KES 8,450" },
       { label: "Deluxe", price: "$115" },
       { label: "Grand", price: "$160" },
     ],
@@ -324,20 +293,19 @@ export const products: Product[] = [
   {
     id: "delicate-touch",
     name: "Delicate Touch Bouquet",
-    price: "$62",
-    priceNum: 62,
+    price: "KES 7,850",
+    priceNum: 7850,
     image: delicateBouquet,
-    tag: "Sympathy",
-    description:
-      "Gentle pastel blooms offering comfort and serenity for thoughtful moments.",
-    details: [
-      "Pastel delicate flowers",
-      "Soft comforting tones",
-      "Sympathy appropriate",
-      "Peaceful arrangement",
-    ],
+   tag: "Money Bouquet",
+description: "A bold and celebratory money bouquet designed to mark achievements, promotions, and winning moments. Crafted with real cash notes and stylish wrapping, it’s a standout gift that feels both exciting and meaningful.",
+details: [
+  "Includes KES 5,000 in customizable denominations",
+  "Wrapped in a bold,customizable celebratory design",
+  "Optional rose accents for a floral touch",
+  "Same-day delivery available",
+],
     sizes: [
-      { label: "Standard", price: "$62" },
+      { label: "Standard", price: "KES 7,850" },
       { label: "Deluxe", price: "$92" },
       { label: "Grand", price: "$132" },
     ],
@@ -345,17 +313,17 @@ export const products: Product[] = [
   {
     id: "elegant-affair",
     name: "Elegant Affair Bouquet",
-    price: "$98",
+    price: "KES 1500",
     priceNum: 98,
     image: elegantBouquet,
-    tag: "Anniversary",
+    tag: "Flower Bouquet",
     description:
       "Sophisticated white and blush bouquet for special anniversaries and events.",
     details: [
-      "Premium white roses",
-      "Blush hydrangeas",
-      "Luxury presentation",
-      "Event-worthy elegance",
+      "Premium red roses",
+      "Same day delivery",
+      "Elegant presentation",
+      "30 red rose stem arrangement",
     ],
     sizes: [
       { label: "Standard", price: "$98" },
@@ -366,13 +334,13 @@ export const products: Product[] = [
   {
     id: "golden-blossom",
     name: "Golden Blossom Bouquet",
-    price: "$88",
+    price: "KES 2000",
     priceNum: 88,
     image: goldenBlossom,
-    tag: "Premium",
+    tag: "Flower Bouquet",
     description: "Luxurious golden yellow roses and sunflowers arranged with elegant greenery for a radiant celebration.",
     details: [
-      "Golden roses & sunflowers",
+      "Yellow roses & sunflowers",
       "Premium luxury arrangement",
       "Gift box presentation",
       "Long-lasting vibrancy",
@@ -386,19 +354,19 @@ export const products: Product[] = [
   {
     id: "grace-bouquet",
     name: "Grace Bouquet",
-    price: "$76",
-    priceNum: 76,
+    price: "KES 13,250",
+    priceNum: 13250,
     image: graceBouquet,
-    tag: "Wedding",
-    description: "Soft pastel roses and hydrangeas in graceful arrangement, perfect for weddings and special events.",
-    details: [
-      "Pastel roses & hydrangeas",
-      "Bridal elegance",
-      "Silk ribbon wrap",
-      "Photogenic perfection",
-    ],
+    tag: "Money Bouquet",
+description: "A soft and elegant money bouquet featuring carefully arranged cash notes with delicate floral accents, perfect for weddings, special events, and meaningful celebrations.",
+details: [
+  "Includes KES 10,000 in customizable denominations",
+  "Neatly folded and styled cash arrangement",
+  "Soft rose accents for a graceful touch",
+  "Beautifully wrapped for a photogenic finish",
+],
     sizes: [
-      { label: "Standard", price: "$76" },
+      { label: "Standard", price: "KES 13,250" },
       { label: "Deluxe", price: "$112" },
       { label: "Grand", price: "$158" },
     ],
@@ -406,19 +374,19 @@ export const products: Product[] = [
   {
     id: "heartfelt-bouquet",
     name: "Heartfelt Bouquet",
-    price: "$69",
-    priceNum: 69,
+    price: "KES 9,600",
+    priceNum: 9600,
     image: heartfeltBouquet,
     tag: "Romance",
     description: "Warm pinks and reds expressing deep emotions for anniversaries or romantic gestures.",
     details: [
-      "Pink & red roses mix",
-      "Heartfelt arrangement",
-      "Satin wrap",
-      "7-10 days vase life",
+      "100 Fresh red roses",
+      "Complimented with a bottle of Rosso Nobille wine",
+      "luxurious chocolates included",
+      "personalized message card included",
     ],
     sizes: [
-      { label: "Standard", price: "$69" },
+      { label: "Standard", price: "KES 9,600" },
       { label: "Deluxe", price: "$101" },
       { label: "Grand", price: "$141" },
     ],
@@ -426,16 +394,16 @@ export const products: Product[] = [
   {
     id: "kids-bouquet",
     name: "Kids Bouquet",
-    price: "$58",
-    priceNum: 58,
+    price: "KES 3000",
+    priceNum: 3000,
     image: kidsBouquet,
     tag: "Kids",
-    description: "Bright, fun flowers designed especially for children, perfect for birthdays and small celebrations.",
+    description: "Bright, fun bouquet designed especially for children, perfect for birthdays and small celebrations.",
     details: [
-      "Colorful kids' flowers",
-      "Fun playful wrap",
-      "Child-safe stems",
-      "Short vase life expected",
+      "Inclusive kes1000 in 50 denominations",
+      "KES 700 worth of snacks",
+      "Yellow roses additions",
+      "Wrapped in a fun packaging style",
     ],
     sizes: [
       { label: "Standard", price: "$58" },
@@ -446,19 +414,18 @@ export const products: Product[] = [
   {
     id: "lilies-i",
     name: "Lilies Bouquet I",
-    price: "$92",
-    priceNum: 92,
+    price: "KES 4,500",
+    priceNum: 4500,
     image: liliesBouquetI,
     tag: "Lilies",
-    description: "Pure white lilies with lush greenery for purity and elegance in sympathy or formal settings.",
-    details: [
-      "Fresh white lilies",
+   description: "An elegant display of pristine lilies complemented by orange roses , with blooms that gradually open to reveal their full beauty, adding a lasting and meaningful presence.",    details: [
+      "Fresh lilies",
       "Calming greenery",
-      "Sympathy appropriate",
+      "Supplimented with roses",
       "Long-lasting blooms",
     ],
     sizes: [
-      { label: "Standard", price: "$92" },
+      { label: "Standard", price: "KES 4,500" },
       { label: "Deluxe", price: "$136" },
       { label: "Grand", price: "$192" },
     ],
@@ -466,19 +433,19 @@ export const products: Product[] = [
   {
     id: "lilies-ii",
     name: "Lilies Bouquet II",
-    price: "$87",
-    priceNum: 87,
+    price: "KES 3500",
+    priceNum: 3500,
     image: liliesBouquetII,
     tag: "Lilies",
     description: "Pink Asiatic lilies with roses for a softer, feminine sympathy or celebration arrangement.",
     details: [
       "Pink Asiatic lilies",
-      "Accent roses",
+      "Supplimented with gypsium",
       "Gentle color palette",
-      "Extended vase life",
+     
     ],
     sizes: [
-      { label: "Standard", price: "$87" },
+      { label: "Standard", price: "KES 3500" },
       { label: "Deluxe", price: "$129" },
       { label: "Grand", price: "$182" },
     ],
@@ -486,19 +453,19 @@ export const products: Product[] = [
   {
     id: "love-u-box",
     name: "Love U Money Box",
-    price: "$135",
-    priceNum: 135,
+    price: " KES 12,800",
+    priceNum: 12800,
     image: loveUBox,
-    tag: "Money Bouquet",
-    description: "Creative cash bouquet design spelling 'LOVE U' – perfect unique gift for romance.",
+    tag: "Romance",
+    description: "Express your love with a striking 'LOVE U' cash bouquet, featuring vibrant red roses arranged creatively in an elegant box—an unforgettable and unique gift for romance.",
     details: [
-      "Custom money design",
-      "Elegant presentation box",
-      "Personalized message",
-      "Customizable amounts",
+      "Red roses in I love U box design", 
+      "Presented in a elegant black box adorned with a ribbon.",
+      "Personalized message available",
+      "Ferrero Rocher chocolates included",
     ],
     sizes: [
-      { label: "Standard", price: "$135" },
+      { label: "Standard", price: "KES 12,800" },
       { label: "Deluxe", price: "$200" },
       { label: "Grand", price: "$280" },
     ],
@@ -506,19 +473,19 @@ export const products: Product[] = [
   {
     id: "lovey-bouquet",
     name: "Lovey Bouquet",
-    price: "$64",
-    priceNum: 64,
+    price: "KES 8,000",
+    priceNum: 8000,
     image: loveyBouquet,
-    tag: "Romance",
-    description: "Sweet blush pinks and whites for everyday romance and appreciation gestures.",
+    tag: "Flower Bouquet",
+    description: "Celebrate love with the Lovey set featuring a bouquet of deep red roses that express passion and affection ",
     details: [
-      "Blush pink roses",
-      "White accent flowers",
-      "Delicate beauty",
-      "Perfect thank you gift",
+      "Complimented by a box of premium chocolates",
+      "Bottle of Rosso Nobille wine",
+      "Personalized message card availabele",
+      "Elegant presentation",
     ],
     sizes: [
-      { label: "Standard", price: "$64" },
+      { label: "Standard", price: "KeS 8000" },
       { label: "Deluxe", price: "$94" },
       { label: "Grand", price: "$134" },
     ],
@@ -526,19 +493,19 @@ export const products: Product[] = [
   {
     id: "luxe-bouquet",
     name: "Luxe Bouquet",
-    price: "$105",
-    priceNum: 105,
+    price: " KES 5,500",
+    priceNum: 5500,
     image: luxeBouquet,
-    tag: "Luxury",
-    description: "Opulent large roses in jewel tones for luxury gifting and high-end occasions.",
-    details: [
-      "Large luxury roses",
-      "Jewel tone palette",
-      "Premium crystal wrap",
-      "Statement piece",
-    ],
+   tag: "Flower Bouquet",
+description: "A soft and romantic arrangement of blush pink roses, white chrysanthemums, and delicate purple fillers, beautifully arranged in a classic basket for a graceful and heartfelt presentation.",
+details: [
+  "Fresh pink roses and white chrysanthemums",
+  "Delicate purple filler flowers for contrast",
+  "Arranged in an elegant handled basket",
+  "Perfect for anniversaries, birthdays, and heartfelt gifts",
+],
     sizes: [
-      { label: "Standard", price: "$105" },
+      { label: "Standard", price: "KES 5,500" },
       { label: "Deluxe", price: "$155" },
       { label: "Grand", price: "$220" },
     ],
@@ -546,19 +513,21 @@ export const products: Product[] = [
   {
     id: "mixed-bouquet",
     name: "Mixed Bouquet Delight",
-    price: "$71",
-    priceNum: 71,
+    price: "KES 1,800",
+    priceNum: 1800,
     image: mixedBouquet,
-    tag: "Best Seller",
-    description: "Vibrant assortment of seasonal flowers for versatile gifting any occasion.",
-    details: [
-      "Seasonal mixed blooms",
-      "Abundant variety",
-      "Cellophane wrap",
-      "Fresh daily selection",
-    ],
+    tag: "Flower Bouquet",
+  description: "A striking and elegant bouquet featuring a rich blend of red and white roses, creating a bold yet romantic statement for any special occasion.",
+  details: [
+    "Premium red and white roses",
+    "Full, round arrangement",
+    "Accented with delicate baby’s breath",
+    "Luxury black wrap with gold marble design",
+    "Hand-tied, elegant presentation",
+    "Perfect for romantic and celebratory moments"
+  ],
     sizes: [
-      { label: "Standard", price: "$71" },
+      { label: "Standard", price: "KES 1,800" },
       { label: "Deluxe", price: "$104" },
       { label: "Grand", price: "$146" },
     ],
@@ -566,19 +535,19 @@ export const products: Product[] = [
   {
     id: "orange-bouquet",
     name: "Orange Zest Bouquet",
-    price: "$67",
-    priceNum: 67,
+    price: "KES 4,900",
+    priceNum: 4900,
     image: orangeBouquet,
-    tag: "Vibrant",
-    description: "Bold orange gerberas and lilies bringing energy and warmth to any space.",
+    tag: "Flower Bouquet",
+    description: "Bold orange roses bringing energy and warmth to any space.",
     details: [
-      "Orange gerberas & lilies",
-      "Energetic warm tones",
-      "Cheerful arrangement",
+      "Orange roses",
+      "Includes Guylian chocolate",
+      "Comes with a personalized card",
       "Perfect pick-me-up",
     ],
     sizes: [
-      { label: "Standard", price: "$67" },
+      { label: "Standard", price: "KES 4,900" },
       { label: "Deluxe", price: "$98" },
       { label: "Grand", price: "$138" },
     ],
@@ -586,19 +555,19 @@ export const products: Product[] = [
   {
     id: "premium-red-ii",
     name: "Premium Red Roses II",
-    price: "$112",
-    priceNum: 112,
+    price: "KES 2,500",
+    priceNum: 2500,
     image: premiumRedRosesII,
-    tag: "Roses",
+    tag: "Flower Bouquet",
     description: "Extra-large premium red roses for ultimate romantic statements.",
     details: [
-      "36 premium red roses",
-      "Extra-large blooms",
-      "Luxury vase included",
-      "10+ days vase life",
+      "premium red roses",
+      "Big head 40 stem bouquet",
+      "gypsium compliment",
+      "Elegant black wrap",
     ],
     sizes: [
-      { label: "Standard", price: "$112" },
+      { label: "Standard", price: "KES 2,500" },
       { label: "Deluxe", price: "$165" },
       { label: "Grand", price: "$235" },
     ],
@@ -609,7 +578,7 @@ export const products: Product[] = [
     price: "$99",
     priceNum: 99,
     image: premiumWhiteBouquet,
-    tag: "Wedding",
+    tag: "Flower Bouquet",
     description: "Flawless white roses and orchids for bridal and formal elegance.",
     details: [
       "White roses & orchids",
@@ -629,7 +598,7 @@ export const products: Product[] = [
     price: "$84",
     priceNum: 84,
     image: pureWhite,
-    tag: "Sympathy",
+    tag: "Flower Bouquet",
     description: "Clean white lilies and roses symbolizing purity and peace.",
     details: [
       "White lilies & roses",
@@ -646,19 +615,19 @@ export const products: Product[] = [
   {
     id: "safi-bouquet",
     name: "Safi Bouquet",
-    price: "$73",
-    priceNum: 73,
-    image: safiBouquet,
-    tag: "Exotic",
-    description: "Unique tropical blooms in signature Safi arrangement for exotic beauty.",
-    details: [
-      "Tropical signature mix",
-      "Exotic presentation",
-      "Ceramic pot option",
-      "Extended vase life",
-    ],
+    price: "KES 6,000",
+    priceNum: 6000,
+   image: safiBouquet,
+tag: "Money Bouquet",
+description: "A unique Safi-style money bouquet featuring neatly arranged cash notes with a touch of tropical-inspired styling, perfect for a standout and memorable gift.",
+details: [
+  "Includes KES 4,000 in denominations of 50",
+  "Carefully folded and arranged cash notes",
+  "Exotic-inspired presentation",
+  "Customizable message card available",
+],
     sizes: [
-      { label: "Standard", price: "$73" },
+      { label: "Standard", price: "KES 6,000" },
       { label: "Deluxe", price: "$107" },
       { label: "Grand", price: "$150" },
     ],
@@ -666,10 +635,10 @@ export const products: Product[] = [
   {
     id: "signature-bouquet",
     name: "Signature Bouquet",
-    price: "$96",
+    price: "KES 1500",
     priceNum: 96,
     image: signatureBouquet,
-    tag: "Best Seller",
+    tag: "Flower Bouquet",
     description: "Our signature arrangement combining favorite blooms for timeless appeal.",
     details: [
       "Signature house blend",
@@ -684,12 +653,32 @@ export const products: Product[] = [
     ],
   },
   {
+    id: "suite-celebration",
+    name: "Suite Celebration Gift",
+    price: "$115",
+    priceNum: 115,
+    image: suiteBouquet,
+    tag: "Flower Bouquet",
+    description: "Luxury suite bouquet for corporate celebrations and VIP events.",
+    details: [
+      "Premium corporate flowers",
+      "Elegant suite arrangement",
+      "Business card holder",
+      "Conference ready",
+    ],
+    sizes: [
+      { label: "Standard", price: "$115" },
+      { label: "Deluxe", price: "$170" },
+      { label: "Grand", price: "$240" },
+    ],
+  },
+  {
     id: "tana-bouquet",
     name: "Tana Bouquet",
     price: "$79",
     priceNum: 79,
     image: tanaBouquet,
-    tag: "Modern",
+    tag: "Flower Bouquet",
     description: "Contemporary design with bold colors and unique textures.",
     details: [
       "Modern bold mix",
@@ -706,15 +695,15 @@ export const products: Product[] = [
   {
     id: "twilight-bouquet",
     name: "Twilight Bouquet",
-    price: "$91",
-    priceNum: 91,
+    price: "KES 2000",
+    priceNum: 2000,
     image: twilightBouquet,
-    tag: "Evening",
-    description: "Deep purples and blues evoking twilight romance and mystery.",
+    tag: "Flower Bouquet",
+    description: "Deep red and white roses evoking twilight romance and mystery.",
     details: [
-      "Twilight purple palette",
-      "Evening romance",
-      "Velvet ribbon wrap",
+      "Twilight mixed palette",
+      "Accompanied with a dairy cadbury ",
+      "Accompanied with a customizable card",
       "Dramatic beauty",
     ],
     sizes: [
@@ -724,21 +713,61 @@ export const products: Product[] = [
     ],
   },
   {
-    id: "zest-bouquet",
-    name: "Zest Bouquet",
-    price: "$66",
-    priceNum: 66,
-    image: zestBouquet,
-    tag: "Citrus",
-    description: "Zesty orange and yellow tones for cheerful, uplifting energy.",
+    id: "graduation-special",
+    name: "Graduation Special Bouquet",
+    price: "KES 23,500",
+    priceNum: 23500,
+    image: valBouquet,
+    tag: "Money Bouquet",
+    description: "Heart-shaped Valentine's bouquet with red roses and chocolates.",
     details: [
-      "Orange & yellow zest",
-      "Uplifting colors",
-      "Sunny disposition",
-      "Perfect cheer gift",
+      "20K cash with denominations of your choosing",
+      "Cuatomized ribbon",
+      "Rose compliments",
     ],
     sizes: [
-      { label: "Standard", price: "$66" },
+      { label: "Standard", price: "KES 23,500" },
+      { label: "Deluxe", price: "$139" },
+      { label: "Grand", price: "$196" },
+    ],
+  },
+  {
+    id: "valeria-romance",
+    name: "Valeria Romance",
+    price: "KES 3,500",
+    priceNum: 3500,
+    image: valeriaBouquet,
+    tag: "Romance",
+    description: "Valeria's favorite romantic bouquet with blush roses and baby's breath.",
+    details: [
+      "Blush roses specialty",
+      "Romantic filler flowers",
+      "Personalized tag",
+      "Valeria approved",
+    ],
+    sizes: [
+      { label: "Standard", price: "$81" },
+      { label: "Deluxe", price: "$119" },
+      { label: "Grand", price: "$168" },
+    ],
+  },
+  
+  {
+    id: "zest-bouquet",
+    name: "Zest Bouquet",
+    price: "KES 2,200",
+    priceNum: 2200,
+    image: zestBouquet,
+    tag: "Flower Bouquet",
+    description: "A vibrant mix of yellow and white roses with gypsophila, arranged in a layered 'stepped' design to create cheerful, uplifting energy. A card can be included for a personal touch.",
+    details: [
+      "Mixed yellow & white roses zest",
+      "gypsium compliment",
+      "Layered 'stepped' floral arrangement",
+      "Card option available",
+    ],
+    sizes: [
+      { label: "Standard", price: "KES 2,200" },
       { label: "Deluxe", price: "$97" },
       { label: "Grand", price: "$137" },
     ],
@@ -749,7 +778,7 @@ export const products: Product[] = [
     price: "$83",
     priceNum: 83,
     image: zuriBouquet,
-    tag: "Exotic",
+    tag: "Money Bouquet",
     description: "Beautiful Zuri arrangement featuring exotic African blooms.",
     details: [
       "Exotic African flowers",
@@ -761,6 +790,36 @@ export const products: Product[] = [
       { label: "Standard", price: "$83" },
       { label: "Deluxe", price: "$122" },
       { label: "Grand", price: "$171" },
+    ],
+  },
+  {
+    id: "kids-romance",
+    name: "Kids Romance Bouquet I",
+    price: "KES 3000",
+    priceNum: 3000,
+    image: kidsBouquetI,
+    tag: "Kids",
+    description: "Sweet bouquet for kids with snack attachment perfect for birthdays or celebrations.",
+    details: ["Some touch of red roses", "KES 1000 in 50 denominations", "Fun packaging style", "Snacks included"],
+    sizes: [
+      { label: "Standard", price: "$62" },
+      { label: "Deluxe", price: "$92" },
+      { label: "Grand", price: "$132" },
+    ],
+  },
+  {
+    id: "kids-birthday-ii",
+    name: "Kids Birthday Bouquet II",
+    price: "kES 4,100",
+    priceNum: 4100,
+    image: kidsBouquetII,
+    tag: "Kids",
+    description: "Colorful birthday bouquet designed for children's parties with playful accents.",
+    details: ["Inclusive 2K cash wrapped gently", "Inclusive snacks", "Suppliment of roses also available", "Fun and festive"],
+    sizes: [
+      { label: "Standard", price: "KES 4,100" },
+      { label: "Deluxe", price: "$87" },
+      { label: "Grand", price: "$123" },
     ],
   },
 ];

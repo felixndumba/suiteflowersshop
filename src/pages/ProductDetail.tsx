@@ -92,27 +92,14 @@ const whatsappMessage = encodeURIComponent(
                   </li>
                 ))}
               </ul>
-              <div className="space-y-3">
-                <p className="text-sm font-body tracking-[0.2em] uppercase text-foreground">Select No. of stems</p>
-                <RadioGroup value={String(selectedSize)} onValueChange={(v) => setSelectedSize(Number(v))} className="flex flex-wrap gap-3">
-                  {product.sizes.map((size, i) => (
-                    <div key={size.label}>
-                      <RadioGroupItem value={String(i)} id={`size-${i}`} className="sr-only peer" />
-                      <Label htmlFor={`size-${i}`} className="flex flex-col items-center gap-1 border border-border px-6 py-3 cursor-pointer peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5 transition-colors hover:border-primary/50">
-                        <span className="text-sm font-body font-medium text-foreground">{size.label}</span>
-                        <span className="text-xs font-body text-muted-foreground">{size.price}</span>
-                      </Label>
-                    </div>
-                  ))}
-                </RadioGroup>
-              </div>
+  
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <Button onClick={handleAddToCart} className="flex-1 rounded-none h-12 tracking-wider uppercase text-xs font-body">
                   <ShoppingBag className="mr-2 h-4 w-4" /> Add to Cart
                 </Button>
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
                   <Button variant="outline" className="w-full rounded-none h-12 tracking-wider uppercase text-xs font-body border-green-600 text-green-700 hover:bg-green-50 hover:text-green-800">
-                    <MessageCircle className="mr-2 h-4 w-4" /> Order via WhatsApp
+                  Quick Order
                   </Button>
                 </a>
               </div>

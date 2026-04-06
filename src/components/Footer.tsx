@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Twitter } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -10,16 +11,26 @@ const Footer = () => {
             <p className="font-body text-sm font-light leading-relaxed">
               Artisan floristry for life's most beautiful moments.
             </p>
+            <p className="font-display text-2xl text-background">Our socials</p>
             <div className="flex gap-4">
+              
               <a href="https://www.instagram.com/suiteflowersandgifts/" className="hover:text-background transition-colors" aria-label="Instagram">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="hover:text-background transition-colors" aria-label="Facebook">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-background transition-colors" aria-label="Twitter">
-                <Twitter className="h-5 w-5" />
-              </a>
+              
+             
+              <a
+  href="https://www.tiktok.com/@suiteflowersandgifts?lang=en"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hover:text-background transition-colors"
+  aria-label="TikTok"
+>
+  <FaTiktok className="h-5 w-5" />
+</a>
             </div>
           </div>
 
@@ -34,7 +45,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {col.links.map((link) => (
                   <li key={link}>
-                    <a href="#" className="font-body text-sm font-light hover:text-background transition-colors">
+<a href={link === "Delivery Info" ? "/delivery" : "#"} className="font-body text-sm font-light hover:text-background transition-colors">
                       {link}
                     </a>
                   </li>
