@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { ShoppingBag, MessageCircle, Check, ChevronLeft } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getProduct, getRelatedProducts } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 
@@ -52,6 +52,10 @@ const whatsappMessage = encodeURIComponent(
       image: product.image,
     });
   };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -114,16 +118,24 @@ const whatsappMessage = encodeURIComponent(
               {related.map((item) => (
                 <Link key={item.id} to={`/product/${item.id}`}>
                   <Card className="group border-0 shadow-none bg-transparent overflow-hidden cursor-pointer">
-                    <div className="relative overflow-hidden aspect-[3/4]">
-                      <img src={item.image} alt={item.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div className="relative overflow-hidden aspect-[4/5]">
+                      <img src={item.image} alt={item.name} loading="lazy" className="w-full h-full object-contain transition-all duration-700 group-hover:scale-105" />
                       <div className="absolute top-4 left-4">
                         <span className="bg-background/90 backdrop-blur-sm text-foreground text-[10px] font-body tracking-[0.2em] uppercase px-3 py-1.5">{item.tag}</span>
                       </div>
+                      <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-500 flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100">
+                        <Button size="sm" variant="secondary" className="rounded-none tracking-wider uppercase text-[10px] font-body px-6">
+                          View Details
+                        </Button>
+                      </div>
                     </div>
                     <CardContent className="px-0 pt-5 pb-0">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-display text-lg text-foreground">{item.name}</h3>
-                        <span className="font-body text-sm text-muted-foreground tracking-wide">{item.price}</span>
+                      <div className="space-y-1">
+                        <div className="flex items-center justify-between">
+                          <h3 className="font-display text-lg text-foreground line-clamp-1">{item.name}</h3>
+                          <span className="font-body text-sm text-muted-foreground tracking-wide">{item.price}</span>
+                        </div>
+                        <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">{item.description?.substring(0, 80) || 'Beautiful arrangement'}...</p>
                       </div>
                     </CardContent>
                   </Card>

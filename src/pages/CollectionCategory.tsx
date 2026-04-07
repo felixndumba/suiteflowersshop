@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShoppingBag, ChevronLeft } from "lucide-react";
+import { ShoppingBag, ChevronLeft, ArrowRight } from "lucide-react";
 import { products } from "@/data/products";
 
 const collectionMap: Record<string, { name: string; description: string; tags: string[] }> = {
@@ -40,6 +40,50 @@ const CollectionCategory = () => {
     );
   }
 
+  const isComingSoon = slug === 'wedding-bridal' || slug === 'events-subscriptions';
+
+  if (isComingSoon) {
+    return (
+      <div className="min-h-screen">
+        <Navbar />
+        <main className="pt-20">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6">
+            <Link to="/collections" className="inline-flex items-center gap-1 text-sm font-body text-muted-foreground hover:text-foreground transition-colors">
+              <ChevronLeft className="h-4 w-4" /> Back to Collections
+            </Link>
+          </div>
+
+          <section className="py-12 lg:py-20 bg-secondary">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center space-y-4">
+              <p className="text-sm font-body tracking-[0.3em] uppercase text-primary">Collection</p>
+              <h1 className="font-display text-5xl md:text-6xl text-foreground">{collection.name}</h1>
+              <p className="text-muted-foreground font-body font-light max-w-lg mx-auto">{collection.description}</p>
+            </div>
+          </section>
+
+          <section className="py-20 lg:py-28 bg-background">
+            <div className="max-w-md mx-auto px-6 lg:px-8 text-center space-y-8">
+            
+              <h2 className="font-display text-4xl md:text-5xl text-foreground">Coming Soon</h2>
+              <p className="text-xl text-muted-foreground font-body max-w-lg mx-auto leading-relaxed">
+                This collection page is under development and will be available shortly.
+              </p><br /><br />
+              <Link to="/contact">
+                <Button size="lg" className="rounded-none px-12 tracking-wider uppercase text-sm font-body h-14 bg-primary hover:bg-primary/90">
+                  Contact Us for Orders <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <p className="text-sm text-muted-foreground font-body">
+                Get personalized assistance for your wedding, bridal, or event needs
+              </p>
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   const items = products.filter((p) => collection.tags.some((tag) => p.tag === tag));
 
   return (
@@ -67,7 +111,7 @@ const CollectionCategory = () => {
                 <Link key={product.id} to={`/product/${product.id}`}>
                   <Card className="group border-0 shadow-none bg-transparent overflow-hidden cursor-pointer">
                     <div className="relative overflow-hidden aspect-[3/4]">
-                      <img src={product.image} alt={product.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                      <img src={product.image} alt={product.name} loading="lazy" className="w-full h-full object-contain transition-opacity duration-700 group-hover:opacity-90" />
                       <div className="absolute top-4 left-4">
                         <span className="bg-background/90 backdrop-blur-sm text-foreground text-[10px] font-body tracking-[0.2em] uppercase px-3 py-1.5">{product.tag}</span>
                       </div>

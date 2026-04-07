@@ -24,14 +24,14 @@ const FeaturedProducts = () => {
           {products.slice(0, 6).map((product) => (
             <Link key={product.id} to={`/product/${product.id}`}>
               <Card className="group border-0 shadow-none bg-transparent overflow-hidden cursor-pointer">
-                <div className="relative overflow-hidden aspect-[3/4]">
+                <div className="relative overflow-hidden aspect-[4/5]">
                   <img
                     src={product.image}
                     alt={product.name}
                     loading="lazy"
                     width={800}
                     height={1024}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-contain transition-all duration-700 group-hover:scale-105"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-background/90 backdrop-blur-sm text-foreground text-[10px] font-body tracking-[0.2em] uppercase px-3 py-1.5">

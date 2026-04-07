@@ -173,7 +173,7 @@ const Collections = () => {
         <section className="py-16 lg:py-20 bg-secondary/30">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <p className="text-sm font-body text-muted-foreground mb-8">
-              {filtered.length} {filtered.length === 1 ? "product" : "products"} found • Page {currentPage} of {totalPages}
+              Page {currentPage} of {totalPages}
             </p>
 {filtered.length === 0 ? (
   <div className="text-center py-20 space-y-4">
@@ -183,12 +183,12 @@ const Collections = () => {
   </div>
 ) : (
   <>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {currentItems.map((product) => (
         <Link key={product.id} to={`/product/${product.id}`}>
           <Card className="group border-0 shadow-none bg-transparent overflow-hidden cursor-pointer">
-            <div className="relative overflow-hidden aspect-[3/4]">
-              <img src={product.image} alt={product.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div className="relative flex items-center justify-center overflow-hidden aspect-[3/5]">
+              <img src={product.image} alt={product.name} loading="lazy" className="max-w-full max-h-full object-contain transition-all duration-700 group-hover:scale-105" />
               <div className="absolute top-4 left-4">
                 <span className="bg-background/90 backdrop-blur-sm text-foreground text-[10px] font-body tracking-[0.2em] uppercase px-3 py-1.5">{product.tag}</span>
               </div>

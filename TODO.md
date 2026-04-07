@@ -1,1 +1,0 @@
-# Task: Replace Pétale logo text with suite.png image in Navbar.tsx&#10;&#10;## Steps:&#10;1. [x] Create TODO.md and get user plan approval&#10;2. [ ] Edit src/components/Navbar.tsx to replace the Link text with img src="/src/assets/suite.png"&#10;3. [ ] Update TODO.md with completion&#10;4. [ ] Test and complete task&#10;

@@ -62,6 +62,46 @@ export const products: Product[] = [
   
   // ... (all previous products remain the same)
   {
+    id: "heartfelt-bouquet",
+    name: "Heartfelt Bouquet",
+    price: "KES 9,600",
+    priceNum: 9600,
+    image: heartfeltBouquet,
+    tag: "Romance",
+    description: "Warm pinks and reds expressing deep emotions for anniversaries or romantic gestures.",
+    details: [
+      "100 Fresh red roses",
+      "Complimented with a bottle of Rosso Nobille wine",
+      "luxurious chocolates included",
+      "personalized message card included",
+    ],
+    sizes: [
+      { label: "Standard", price: "KES 9,600" },
+      { label: "Deluxe", price: "$101" },
+      { label: "Grand", price: "$141" },
+    ],
+  },
+  {
+    id: "premium-red-ii",
+    name: "Premium Red Roses II",
+    price: "KES 2,500",
+    priceNum: 2500,
+    image: premiumRedRosesII,
+    tag: "Flower Bouquet",
+    description: "Extra-large premium red roses for ultimate romantic statements.",
+    details: [
+      "premium red roses",
+      "Big head 40 stem bouquet",
+      "gypsium compliment",
+      "Elegant black wrap",
+    ],
+    sizes: [
+      { label: "Standard", price: "KES 2,500" },
+      { label: "Deluxe", price: "$165" },
+      { label: "Grand", price: "$235" },
+    ],
+  },
+  {
     id: "timeless-bouquet",
     name: "Timeless Bouquet",
     price: "KES 10,350",
@@ -371,26 +411,7 @@ details: [
       { label: "Grand", price: "$158" },
     ],
   },
-  {
-    id: "heartfelt-bouquet",
-    name: "Heartfelt Bouquet",
-    price: "KES 9,600",
-    priceNum: 9600,
-    image: heartfeltBouquet,
-    tag: "Romance",
-    description: "Warm pinks and reds expressing deep emotions for anniversaries or romantic gestures.",
-    details: [
-      "100 Fresh red roses",
-      "Complimented with a bottle of Rosso Nobille wine",
-      "luxurious chocolates included",
-      "personalized message card included",
-    ],
-    sizes: [
-      { label: "Standard", price: "KES 9,600" },
-      { label: "Deluxe", price: "$101" },
-      { label: "Grand", price: "$141" },
-    ],
-  },
+  
   {
     id: "kids-bouquet",
     name: "Kids Bouquet",
@@ -552,26 +573,7 @@ details: [
       { label: "Grand", price: "$138" },
     ],
   },
-  {
-    id: "premium-red-ii",
-    name: "Premium Red Roses II",
-    price: "KES 2,500",
-    priceNum: 2500,
-    image: premiumRedRosesII,
-    tag: "Flower Bouquet",
-    description: "Extra-large premium red roses for ultimate romantic statements.",
-    details: [
-      "premium red roses",
-      "Big head 40 stem bouquet",
-      "gypsium compliment",
-      "Elegant black wrap",
-    ],
-    sizes: [
-      { label: "Standard", price: "KES 2,500" },
-      { label: "Deluxe", price: "$165" },
-      { label: "Grand", price: "$235" },
-    ],
-  },
+  
   {
     id: "premium-white",
     name: "Premium White Bouquet",
