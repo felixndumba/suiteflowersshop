@@ -12,7 +12,8 @@ const links = [
   { label: "Collections", href: "/collections" },
   { label: "Gifts", href: "/gifts" },
   { label: "Occasions", href: "/occasions" },
-  { label: "Contact", href: "/contact" },
+{ label: "Contact", href: "/contact" },
+  { label: "Sitemap", href: "/sitemap" },
 ];
 
 const allItems = [

@@ -1,1 +1,1 @@
-- [x] Edit src/components/Navbar.tsx to fix img src to /Suites.png
+# TODO Steps for Adding Sitemap Route\n\n- [x] Create TODO.md (done)\n- [x] Create src/pages/Sitemap.tsx\n- [x] Update src/App.tsx: add import and route\n- [x] Update src/components/Navbar.tsx: add Sitemap to links\n- [x] Test and complete\n

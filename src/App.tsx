@@ -15,6 +15,7 @@ import Gifts from "./pages/Gifts.tsx";
 import GiftDetail from "./pages/GiftDetail.tsx";
 import Delivery from "./pages/delivery.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import Sitemap from "./pages/Sitemap.tsx";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/gifts" element={<Gifts />} />
             <Route path="/gift/:id" element={<GiftDetail />} />
             <Route path="/delivery" element={<Delivery />} />
+            <Route path="/sitemap" element={<Sitemap />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
